@@ -1,5 +1,5 @@
 https://www.techiediaries.com/ubuntu/install-python-3-pip-venv-ubuntu-20-04-19/
-
+name for git zlfqDTwy
 1. Install python 3.8:
 sudo apt install python3.8
 
