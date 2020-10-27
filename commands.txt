@@ -1,0 +1,25 @@
+https://www.techiediaries.com/ubuntu/install-python-3-pip-venv-ubuntu-20-04-19/
+
+1. Install python 3.8:
+sudo apt install python3.8
+
+2. Install venv:
+sudo apt install python3.8-venv
+
+3. Create env:
+python3 -m venv env38
+
+4. Activate venv:
+source env38/bin/activate
+
+NOW python = python3 = python3.8; pip = pip3  in venv
+
+5. MySql start:
+mysql -u root -p
+
+create database test1 character set utf8 collate utf8_unicode_ci (bin);
+ci and bin for the way of search
+
+M - db
+V - templates
+C - view
