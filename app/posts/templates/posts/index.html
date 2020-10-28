@@ -9,5 +9,10 @@
 {% endblock %}
 
 {% block content %}
-  {{ n }} Hop  Hop from {{m}}
+  {% for post in posts %}
+  <p>
+    <a href="{{url_for('posts.post_detail', slug=post.slug)}}">{{post.title}}</a>  
+  </p>
+
+  {% endfor %}
 {% endblock %}
