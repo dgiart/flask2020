@@ -35,3 +35,13 @@ SQLALCHEMY_DATABASE_URI='mysql+mysqlconnector://root:qt217gb314@localhost/test1'
 
 posts = Post.query.all() - list of posts
 p2 = Post.query.filter(Post.title.contains('second')).all() - find second post.
+
+
+2021
+20.01.2021
+Migrations:
+after creation of manage.py ==> python manage.py db init
+python manage.py db migrate  +  python manage.py db upgrade
+
+Adding tag do db
+db.session.add(tag)  + db.session.commit()     (...add_all([p1, ...]))
