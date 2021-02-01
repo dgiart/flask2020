@@ -45,3 +45,12 @@ python manage.py db migrate  +  python manage.py db upgrade
 
 Adding tag do db
 db.session.add(tag)  + db.session.commit()     (...add_all([p1, ...]))
+
+01.02.2021
+t = Tag.query.first()
+
+p1=Post.query.filter(Post.id == 1)
+post1 = p1.first()
+
+Finished Video 7 (16.43, 01:02:2021)
+Added connection between Tags and Posts, just one tag.
