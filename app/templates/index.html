@@ -9,5 +9,14 @@
 {% endblock %}
 
 {% block content %}
+  {% for el in list %}
+    {% if el%2 == 0 %}
+      <p> {{ type(el) }} </p>
+
+    {% endif %}
+
+  {% endfor %}
+
+
   {{ n }} Hop  Hop from {{m}}
 {% endblock %}

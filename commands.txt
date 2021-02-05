@@ -1,3 +1,4 @@
+VENV: flask2020env="source /home/art/My_Projects/flask/venv/bin/activate"
 27.10.2020
 
 https://www.techiediaries.com/ubuntu/install-python-3-pip-venv-ubuntu-20-04-19/
@@ -37,6 +38,9 @@ posts = Post.query.all() - list of posts
 p2 = Post.query.filter(Post.title.contains('second')).all() - find second post.
 
 
+In order to avoid "rounding" blueprint registration was moved from app to main
+
+
 2021
 20.01.2021
 Migrations:
@@ -54,3 +58,11 @@ post1 = p1.first()
 
 Finished Video 7 (16.43, 01:02:2021)
 Added connection between Tags and Posts, just one tag.
+
+01.02.2021
+Modification of "input" line, 'request' - global Flask object (like 'url_for')
+<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name = "q" value="request">
+
+04.02.2021
+
+In posts/index.html is NOT a list, so it doesn't have field "title"
