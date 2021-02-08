@@ -1,6 +1,32 @@
 VENV: flask2020env="source /home/art/My_Projects/flask/venv/bin/activate"
 27.10.2020
 
+from pip freeze:
+alembic==0.9.9
+certifi==2018.4.16
+chardet==3.0.4
+click==6.7
+Flask==1.0.2
+Flask-Migrate==2.1.1
+Flask-Script==2.0.6
+Flask-SQLAlchemy==2.3.2
+idna==2.6
+itsdangerous==0.24
+Jinja2==2.10
+Mako==1.0.7
+MarkupSafe==1.0
+mysql-connector==2.1.4
+python-dateutil==2.7.3
+python-editor==1.0.3
+requests==2.18.4
+six==1.11.0
+SQLAlchemy==1.2.8
+urllib3==1.22
+Werkzeug==0.14.1
+WTForms==2.3.3
+
+
+
 https://www.techiediaries.com/ubuntu/install-python-3-pip-venv-ubuntu-20-04-19/
 name for git zlfqDTwy
 1. Install python 3.8:
@@ -66,3 +92,19 @@ Modification of "input" line, 'request' - global Flask object (like 'url_for')
 04.02.2021
 
 In posts/index.html is NOT a list, so it doesn't have field "title"
+
+05.02.2021
+
+Video 8 ~12 min
+
+
+08.02.2021
+logging(Molchanov): https://www.youtube.com/watch?v=qqdgynJ5ATU
+data analises (Hiryanov) : https://www.youtube.com/watch?v=Dx2SE4hYy4g
+
+Video 8 - vary bed quality
+install wtforms.
+in posts directory create file forms.py: from wtforms import form,  StringField, TextAreaField
+
+bootstrap consists of 12 columns (????)
+Finished at 27 min.
