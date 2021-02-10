@@ -1,8 +1,14 @@
 from flask import Blueprint
 from flask import render_template
 from flask import request
+from flask import redirect
+from flask import url_for
 from models import Post, Tag
 from app import db
+import logging
+logger = logging.getLogger()
+
+
 
 from . forms import PostForm
 
@@ -10,8 +16,19 @@ posts = Blueprint('posts', __name__, template_folder = 'templates')
 
 
 
-@posts.route('/create')
+@posts.route('/create', methods=['POST', 'GET'])
 def create_post():
+    if request.method == 'POST':
+        title=request.form['title']
+        body=request.form['body']
+
+        try:
+            post=Post(title=title, body=body)
+            db.session.add(post)
+            db.session.commit()
+        except:
+            print('Smth went Wrong')
+        return redirect(url_for('posts.index'))
     form=PostForm()
     return render_template('posts/post_create.html', form=form)
 
@@ -19,20 +36,24 @@ def create_post():
 @posts.route('/')
 def index():
     q = request.args.get('Q')
+    page=request.args.get('page')
+    if page and page.isdigit():
+        page=int(page)
+    else:
+        page=1
+
     if q:
         posts = Post.query.filter(Post.title.contains(q) | Post.body.contains(q))
-        # if posts.count() == 0:
-        #     not_found='No results found'
-        #     p=Post(title=not_found)
-        #
-        #     posts = Post.query.filter(Post.title.contains(not_found))
     else:
-        posts = Post.query.all()
-    return render_template('posts/index.html', posts = posts)
+        posts = Post.query.order_by(Post.created.desc())
+
+    pages=posts.paginate(page=page, per_page=5)
+    return render_template('posts/index.html', posts = posts, pages=pages)
 
 @posts.route('/<slug>')
 def post_detail(slug):
     post=Post.query.filter(Post.slug==slug).first()
+    logger.warning('SLUG =' + slug)
     tags = post.tags
     return render_template('posts/post_detail.html', post = post, tags = tags)
 

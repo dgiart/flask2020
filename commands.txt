@@ -108,3 +108,15 @@ in posts directory create file forms.py: from wtforms import form,  StringField,
 
 bootstrap consists of 12 columns (????)
 Finished at 27 min.
+
+09.02.2021
+
+Add post create.
+
+Problems at 16.47 with pagination.
+AttributeError: 'NoneType' object has no attribute 'tags'
+
+
+10.20.2021
+
+Necessary to fix problem with bootstrap versions.
