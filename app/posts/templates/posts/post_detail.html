@@ -21,4 +21,6 @@
   {{post.body}}
 </div>
 
+<a href="{{ url_for('posts.edit_post', slug = post.slug)}}" class="btn btn-primary" >EDIT</a>
+
 {% endblock %}

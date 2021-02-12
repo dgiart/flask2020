@@ -119,4 +119,8 @@ AttributeError: 'NoneType' object has no attribute 'tags'
 
 10.20.2021
 
-Necessary to fix problem with bootstrap versions.
+Necessary to fix problem with bootstrap versions.(DONE)
+
+11.02.2021
+
+To read documentation of "wtforms".
