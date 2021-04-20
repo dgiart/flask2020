@@ -10,8 +10,9 @@
 
 {% block content %}
 <div class="tags">
+  Tags: 
   {% for tag in tags %}
-  '!!!'
+
   <a href="{{ url_for('posts.tag_detail', slug = tag.slug )}}"><span class="badge rounded-pill bg-warning text-dark">{{tag.name}}</span></a>
 
   {% endfor %}
@@ -21,6 +22,11 @@
   {{post.body}}
 </div>
 
-<a href="{{ url_for('posts.edit_post', slug = post.slug)}}" class="btn btn-primary" >EDIT</a>
+<a href="{{ url_for('posts.edit_post', slug = post.slug)}}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">EDIT POST</a>
+
+<!-- <form action="{{ url_for('posts.edit_post', slug = post.slug)}}">
+    <input type="submit" value="EDIT" />
+</form> -->
+
 
 {% endblock %}

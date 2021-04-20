@@ -12,4 +12,4 @@ import view
 if __name__ == '__main__':
     import sys
     print(sys.version)
-    app.run()
+    app.run(debug = True)
